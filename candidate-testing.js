@@ -22,7 +22,7 @@ let score = 0
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-const input = require('readline-sync'); -
+//const input = require('readline-sync'); -
 
   let answer = input.question("What is your name?");
 
@@ -51,20 +51,25 @@ function gradeQuiz(candidateAnswers) {
   console.log(candidateAnswers);
 
   console.log(correctAnswers);
+let correct =0
 
   for (let i=0; i<candidateAnswers.length; i++){
 
-  if (candidateAnswers[i] == correctAnswers[i].toLowerCase()){ console.log("You're Right!")
-  score = score +20}
+  if (candidateAnswers[i] == correctAnswers[i].toLowerCase()){ correct++; 
+    console.log("You're Right!")
+    score = score +20}
     else { console.log("Sorry! Try Again!")}
 }
 
-  let grade = score
+  let grade = (correct/questions.length)*100;
+
   console.log(`Your overall grade is ${grade}%`)
+
   if (score >=80){ console.log( "You Pass!");}
+
     else {console.log ("Try Again!");}
 
-  return grade;
+    return grade;
 }
 
 function runProgram() {
