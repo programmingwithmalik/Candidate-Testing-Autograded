@@ -24,11 +24,11 @@ function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 const input = require('readline-sync'); -
 
-const answer = input.question("What is your name?");
+  const answer = input.question("What is your name?");
 
-let candidateName = answer;
+  let candidateName = answer;
 
-console.log("Welcome " +  candidateName); 
+  console.log("Welcome " +  candidateName); 
 
 }
 
@@ -68,8 +68,7 @@ function gradeQuiz(candidateAnswers) {
 }
 
 function runProgram() {
-  const input = require('readline-sync');
-  const answer = input.question("What is your name?");
+  askForName();
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
